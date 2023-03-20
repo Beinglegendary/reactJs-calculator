@@ -2,7 +2,7 @@
 ***
 Just minimalistic styled basic calculating React app
 
-[Live Demo](https://https://uwabor-reactjs-calculator.netlify.app/)
+[Live Demo](https://uwabor-reactjs-calculator.netlify.app/)
 
 <img src="https://theazimjon.netlify.app/assets/img/portfolio/calculator1.png" />
 
