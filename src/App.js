@@ -4,29 +4,42 @@ import "./App.css";
 function App() {
   const [result, setResult] = useState("");
 
-  //handle click
+  // handle click
   const handleClick = (e) => {
-    setResult(result?.concat(e.target?.name));
+    setResult(result + (e.target?.name ?? ""));
   };
 
-  //clear button
+  // clear button
   const clear = () => {
     setResult("");
   };
 
-  //back button
+  // back button
   const backspace = () => {
-    setResult(result?.slice(0, -1));
+    setResult(result.slice(0, -1));
   };
 
-  //calculator
+  // calculator
   const calc = () => {
     try {
-      setResult(
-        Number(new Function("return " + result)().toString()).toFixed(2)
-      );
+      const opRegex = /[+\-*/]/;
+      const nums = result.split(opRegex).map(parseFloat);
+      const ops = result.match(opRegex);
+      let resultVal = nums[0];
+      for (let i = 0; i < ops.length; i++) {
+        if (ops[i] === "+") {
+          resultVal += nums[i + 1];
+        } else if (ops[i] === "-") {
+          resultVal -= nums[i + 1];
+        } else if (ops[i] === "*") {
+          resultVal *= nums[i + 1];
+        } else if (ops[i] === "/") {
+          resultVal /= nums[i + 1];
+        }
+      }
+      setResult(resultVal.toFixed(2).toString());
     } catch (error) {
-      setResult("inavalid format");
+      setResult("invalid format");
     }
   };
 
@@ -34,7 +47,7 @@ function App() {
     <>
       <div className="container">
         <div className="calculator">
-          <input type="text" className="calc-numbers" value={result} readOnly />
+          <input type="text" className="calc-numbers" value={result} />
           <div className="calculator-buttons">
             <button onClick={clear} className="orange clear span-2">
               AC
