@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.calculator {
+  max-width: 500px;
+  background: greenyellow;
+  width: 500px;
+  border-radius: 25px;
+  border: 5px solid red;
+  height: 470px;
+  box-shadow: 0 5px 30px -5px rgba(0, 0, 0, 0.6);
+}
+
+.calculator-buttons {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 13px;
+}
+
+button {
+  min-height: 60px;
+  font-size: 20px;
+  font-weight: 100px;
+  border: none;
+  background: rgb(200, 200, 200);
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.calc-numbers {
+  background: rgb(0, 0, 0);
+  color: rgb(225, 222, 222);
+  font-size: 2em;
+  border: 0;
+  padding: 0.3em;
+  text-align: right;
+  width: 100%;
+  height: 75px;
+  border-radius: 17.8px;
+}
+
+.span-2 {
+  grid-column: span 2;
+}
+
+.span-3 {
+  grid-column: span 3;
+}
+
+.clear {
+  background-color: rgb(234, 32, 32);
+  color: rgb(255, 255, 255);
+}
+
+.btn {
+  background-color: #544C4C;
+  color: #fff;
+}
+
+.orange:hover {
+  background: #FFA940;
+}
+
+.btn:hover {
+  background: #A19090;
+}
+
+.btn:active {
+  background: rgb(173, 87, 87);
+}
+
+.orange {
+  background-color: #FF7C00;
+}
