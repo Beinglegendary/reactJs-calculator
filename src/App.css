@@ -15,8 +15,9 @@ body {
   max-width: 500px;
   background: greenyellow;
   width: 500px;
-  border-radius: 25px;
-  border: 5px solid red;
+  border-radius: 27px;
+  border: 8px solid red;
+  outline: 12px solid greenyellow;
   height: 470px;
   box-shadow: 0 5px 30px -5px rgba(0, 0, 0, 0.6);
 }
